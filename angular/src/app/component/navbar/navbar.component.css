@@ -5,6 +5,9 @@
     margin: 0px;
     padding: 0px;
 } */
+.navbar-brand{
+    color: gold;
+}
 .navbar-nav li a{
     color: aliceblue;
 }
