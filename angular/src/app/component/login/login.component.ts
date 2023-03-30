@@ -20,18 +20,23 @@ export class LoginComponent {
 })
 
 
-  postlogindata(Data:any){
-    this.http.post('http://localhost:3000/login',Data).subscribe((res)=>{
+
+   postlogindata(Data:any){
+    this.http.post('http://localhost:3000/login',Data , { withCredentials: true }).subscribe((res)=>{
       console.log(res);
       this.data = [res]
+      console.log(this.data.length);
+
+  if (this.data.length==1) {
+    alert("login successful!");
+    
+    // sessionStorage
+    sessionStorage.setItem("user",JSON.stringify(this.data[0]));
+    this.route.navigate(['/home']);
+  } else {
+    alert("invalid login credential!"); 
+    this.route.navigate(['/login']);
+  }
     })
-    if (this.data.length==1) {
-      alert("login successful!");
-      this.route.navigate(['/home']);
-      // sessionStorage
-    } else {
-      alert("invalid login credential!");
-      this.route.navigate(['/login']);
-    }
    }
 }

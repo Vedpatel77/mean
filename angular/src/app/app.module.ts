@@ -12,6 +12,8 @@ import { HomeComponent } from './component/home/home.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { AgGridModule } from 'ag-grid-angular';
+import { ViewuerComponent } from './component/viewuer/viewuer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +22,16 @@ import { HttpClientModule } from "@angular/common/http";
     BlogsComponent,
     UsersComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ViewuerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

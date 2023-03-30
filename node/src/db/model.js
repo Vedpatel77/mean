@@ -16,9 +16,21 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    number:{
+        type:Number,
+        required:true
+    },
     password:{
         type:String,
         required:true
+    },
+    role:{
+        type:String,
+        default:'user'
+    },
+    CreatedDate:{
+        type:Date,
+        default:Date.now()
     },
     tokens:[{
         token:{
@@ -31,7 +43,7 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.createtoken = async function() {
     try {
         const token = jwt.sign({_id:this._id.toString()},process.env.SECRET_KEY);
-        console.log(token);
+        // console.log(token,"modal");
         this.tokens=this.tokens.concat({token:token})
         await this.save()
         return token;

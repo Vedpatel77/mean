@@ -18,6 +18,7 @@ export class RegisterComponent {
       firstName:new FormControl(''),
       lastName:new FormControl(''),
       email:new FormControl(''),
+      number:new FormControl(''),
       password:new FormControl(''),
   })
   userRegister(Data : any){
@@ -31,6 +32,7 @@ export class RegisterComponent {
       console.log(this.registerForm.value);
       
       alert("register successful!");
+      sessionStorage.setItem('user',this.ruser);
       this.route.navigate(['/home']);
     } else {
       alert("you are not register!");

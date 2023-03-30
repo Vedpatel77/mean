@@ -1,6 +1,6 @@
 <div class="container w-50 form">
     <form [formGroup]="registerForm" (ngSubmit)="userRegister(registerForm.value)">
-        <h4 class="text-center">User Registration</h4>
+        <h4 class="text-center mb-4">User Registration</h4>
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-2">
           <div class="col-xl-6 col-md-6 col-sm-12 mb-2">
@@ -21,6 +21,11 @@
         <div class="form-outline mb-2">
           <input formControlName="email" type="email" id="form3Example3" class="form-control border-bottom" />
           <label class="form-label" for="form3Example3">Email address</label>
+        </div>
+        <!-- phone number -->
+        <div class="form-outline mb-2">
+          <input formControlName="number" type="text" id="form6Example6" class="form-control border-bottom" />
+          <label class="form-label" for="form6Example6">Phone</label>
         </div>
       
         <!-- Password input -->
