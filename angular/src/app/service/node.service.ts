@@ -8,7 +8,15 @@ export class NodeService {
  
   constructor(public http:HttpClient) { }
 
- 
+  isuserlogedin(){
+      if (sessionStorage.length == 0) {
+        return false;
+      } else {
+        return true;
+      }
+  }
+
+  
 
 
 }

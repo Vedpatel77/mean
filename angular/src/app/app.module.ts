@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { AgGridModule } from 'ag-grid-angular';
 import { ViewuerComponent } from './component/viewuer/viewuer.component';
+import { BloglistComponent } from './component/bloglist/bloglist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ViewuerComponent } from './component/viewuer/viewuer.component';
     UsersComponent,
     HomeComponent,
     RegisterComponent,
-    ViewuerComponent
+    ViewuerComponent,
+    BloglistComponent
   ],
   imports: [
     BrowserModule,

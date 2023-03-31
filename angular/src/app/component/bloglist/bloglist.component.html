@@ -1,0 +1,28 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <h1 class="text-center mt-5 mb-5 text-decoration-underline">Today's famous Blogs</h1>
+    <div *ngFor="let blog of blogdata" class="row mt-3 mb-3">
+        <div class="col-3">
+            <img src="{{blog.imageUrl}}" />
+        </div>
+        <div class="col-8">
+            <h2
+                routerLink="https://dianasleite.medium.com/the-art-of-quitting-lessons-from-my-ph-d-journey-d8499fc17405">
+                {{blog.blogTitle}}</h2>
+            <h4 class="text-secondary">{{blog.blogsummary}}</h4>
+        </div>
+
+        <div class="col-1">
+            <button type="button" class="btn btn-primary mx-2" (click)="editblog(blog)">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="btn btn-danger" (click)="deleteblog(blog)"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>

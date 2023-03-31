@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:'user'
     },
-    CreatedDate:{
+    RegisterDate:{
         type:Date,
         default:Date.now()
     },
@@ -38,6 +38,28 @@ const userSchema = new mongoose.Schema({
         required:true
         }
        }]
+});
+const BlogSchema = new mongoose.Schema({
+    blogerEmail:{
+        type:String,
+        required:true
+    },
+    blogTitle:{
+        type:String,
+        required:true
+    },
+    blogsummary:{
+        type:String,
+        required:true
+    },
+    blogDescription:{
+        type:String,
+        required:true
+    },
+    imageUrl:{
+        type:String,
+        required:true
+    }
 });
 
 userSchema.methods.createtoken = async function() {
@@ -60,5 +82,6 @@ userSchema.pre("save",async function (next){
 })
 
 const User = new mongoose.model("User",userSchema);
+const Blog = new mongoose.model("Blog",BlogSchema);
 
-module.exports = User;
+module.exports = {User , Blog};

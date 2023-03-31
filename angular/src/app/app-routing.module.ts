@@ -6,6 +6,7 @@ import { UsersComponent } from './component/users/users.component';
 import { BlogsComponent } from './component/blogs/blogs.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ViewuerComponent } from './component/viewuer/viewuer.component';
+import { BloglistComponent } from './component/bloglist/bloglist.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'users',component:UsersComponent},
   {path:'users/:id',component:ViewuerComponent},
-  {path:'blogs',component:BlogsComponent}
+  {path:'blogslist',component:BloglistComponent},
+  {path:'blogs/addblog',component:BlogsComponent}
 ];
 
 @NgModule({
